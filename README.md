@@ -1,5 +1,5 @@
 <b>JavaPro_21_10_2022</br>
-Home Work_6</br>
+Home Work_6</b>
 
 1. Створити порожній проект у IntelliJ IDEA, створити клас HomeWorkApp і прописати в ньому метод main().
 
