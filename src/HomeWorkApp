@@ -1,12 +1,11 @@
+package itHillel_HW_6;
+
 public class HomeWorkApp {
     public static void main(String[]args){
 
         // Task №2
         System.out.println("Task №1,2 result:");
-        Fruits[] f = Fruits.values();
-        for(Fruits res: f){
-            System.out.println(res);
-        }
+        fruitsPrint();
 
         // Task №3
         System.out.println("\nTask №3 result:");
@@ -49,6 +48,15 @@ public class HomeWorkApp {
 
     // METHODS
 //////////////////////////////////////////////////////////////////////////////////////
+
+    // Task №2
+    public static void fruitsPrint(){
+        Fruits[] arr = Fruits.values();
+        for(Fruits res: arr){
+            System.out.println(res);
+        }
+    }
+
     // Task №3
     public static void checkSumSign(){
         int a = 5;
