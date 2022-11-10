@@ -1,5 +1,3 @@
-package itHillel_HW_6;
-
 public class HomeWorkApp {
     public static void main(String[]args){
 
@@ -21,10 +19,12 @@ public class HomeWorkApp {
 
         // Task №6
         System.out.println("\nTask №6 result:");
-        compareSumIntegerNumbers(4,16);
+        //compareSumIntegerNumbers(4,16);
+        System.out.println(compareSumIntegerNumbers(4,16));
 
         System.out.println("\nTask №6 (for double numbers) result:");
-        compareSumDoubleNumbers(4.50,15.50);
+        //compareSumDoubleNumbers(4.50,15.50);
+        System.out.println(compareSumDoubleNumbers(4.50,15.50));
 
         // Task №7
         System.out.println("\nTask №7 result:");
@@ -42,7 +42,7 @@ public class HomeWorkApp {
 
         // Task №10
         System.out.println("\nTask №10 result:");
-        System.out.println(leapНear(2020));
+        System.out.println(leapYear(2020));
 
     }
 
@@ -61,12 +61,13 @@ public class HomeWorkApp {
     public static void checkSumSign(){
         int a = 5;
         int b = 10;
-        a=a+b;
+         a=a+b;
+
+        //if(a+b>=0)
         if(a>=0)
             System.out.println("Сума позитивна і становить "+a);
         else
             System.out.println("Сума негативна і становить "+a);
-
     }
 
     // Task №4
@@ -91,14 +92,15 @@ public class HomeWorkApp {
     }
 
     // Task №6
-    public static void compareSumIntegerNumbers(int q, int w){
-        System.out.println(q+w>=10 && q+w<=20);
+    public static boolean compareSumIntegerNumbers(int q, int w){
+//        System.out.println(q+w>=10 && q+w<=20);
+            return (q+w>=10 && q+w<=20);
     }
     // Task №6 (for double numbers)
-    public static void compareSumDoubleNumbers(double q, double w) {
+    public static boolean compareSumDoubleNumbers(double q, double w) {
         double eq=0.00000001;
-        System.out.println(q+w-10>=eq && q+w-20<=eq);
-       // System.out.println(q+"+"+w+"="+(q+w));
+       // System.out.println(q+w-10>=eq && q+w-20<=eq);
+        return (q+w-10>=eq && q+w-20<=eq);
     }
 
     // Task №7
@@ -111,10 +113,7 @@ public class HomeWorkApp {
 
     // Task №8
     public static boolean isMinusNumber(int mn){
-        if(mn>=0)
-            return false;
-        else
-            return true;
+            return !(mn>=0);
     }
 
     // Task №9
@@ -125,7 +124,7 @@ public class HomeWorkApp {
         }
     }
 
-    public static boolean leapНear(int year){
+    public static boolean leapYear(int year){
         if((year%4==0)&&(year%100!=0)||(year%400==0)) {
             System.out.println("Рік високосний.");
             return true;
