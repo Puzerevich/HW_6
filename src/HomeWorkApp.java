@@ -3,19 +3,22 @@ public class HomeWorkApp {
 
         // Task №2
         System.out.println("Task №1,2 result:");
-        fruitsPrint();
+        System.out.println(printThreeWords());
 
         // Task №3
         System.out.println("\nTask №3 result:");
-        checkSumSign();
+        if(checkSumSign())
+            System.out.println("Сума позитивна.");
+        else
+            System.out.println("Сума негативна.");
 
         // Task №4
         System.out.println("\nTask №4 result:");
-        printColor();
+        System.out.println(printColor(200));
 
         // Task №5
         System.out.println("\nTask №5 result:");
-        compareNumbers();
+        System.out.println(compareNumbers());
 
         // Task №6
         System.out.println("\nTask №6 result:");
@@ -29,6 +32,10 @@ public class HomeWorkApp {
         // Task №7
         System.out.println("\nTask №7 result:");
         PlusOrMinus(-11);
+        if(PlusOrMinus(-11))
+           System.out.println("Число додатнє");
+        else
+           System.out.println("Число від'ємне");
 
         // Task №8
         System.out.println("\nTask №8 result:");
@@ -42,73 +49,77 @@ public class HomeWorkApp {
 
         // Task №10
         System.out.println("\nTask №10 result:");
-        System.out.println(leapYear(2020));
-
+        if(leapYear(2020))
+             System.out.println("Рік високосний.");
+        else
+            System.out.println("Рік не високосний.");
     }
 
     // METHODS
 //////////////////////////////////////////////////////////////////////////////////////
 
     // Task №2
-    public static void fruitsPrint(){
+    public static String printThreeWords(){
         Fruits[] arr = Fruits.values();
-        for(Fruits res: arr){
-            System.out.println(res);
+        String res="";
+        for(Fruits rs: arr){
+//            System.out.println(res);
+            res = res + rs.name()+"\n";
         }
+        return res;
     }
 
     // Task №3
-    public static void checkSumSign(){
+    public static boolean checkSumSign(){
         int a = 5;
         int b = 10;
          a=a+b;
 
-        //if(a+b>=0)
         if(a>=0)
-            System.out.println("Сума позитивна і становить "+a);
+            return true;
         else
-            System.out.println("Сума негативна і становить "+a);
+            return false;
     }
 
     // Task №4
-    public static void printColor(){
-        int value = 100;
+    public static String printColor(int value){
+        String res="";
         if(value<0)
-            System.out.println(trafficLight.RED);
+            res = String.valueOf(trafficLight.RED);
         else
             if(value>100)
-                System.out.println(trafficLight.GREEN);
-            else System.out.println(trafficLight.YELLOW);
+                res = String.valueOf(trafficLight.GREEN);
+            else
+                res = String.valueOf(trafficLight.YELLOW);
+        return res;
     }
 
     // Task №5
-    public static void compareNumbers(){
+    public static String compareNumbers(){
         int a=3;
         int b=2;
         if(a>=b)
-            System.out.println(comparNumb.a.res);
+            return comparNumb.a.res;
         else
-            System.out.println(comparNumb.b.res);
+            return comparNumb.b.res;
     }
 
     // Task №6
     public static boolean compareSumIntegerNumbers(int q, int w){
-//        System.out.println(q+w>=10 && q+w<=20);
             return (q+w>=10 && q+w<=20);
     }
     // Task №6 (for double numbers)
     public static boolean compareSumDoubleNumbers(double q, double w) {
         double eq=0.00000001;
-       // System.out.println(q+w-10>=eq && q+w-20<=eq);
         return (q+w-10>=eq && q+w-20<=eq);
     }
 
     // Task №7
-    public static void PlusOrMinus(int n){
+    public static boolean PlusOrMinus(int n){
         if(n>=0)
-            System.out.println("Число додатнє");
+            return true;
         else
-            System.out.println("Число від'ємне");
+            return false;
     }
 
     // Task №8
@@ -126,11 +137,9 @@ public class HomeWorkApp {
 
     public static boolean leapYear(int year){
         if((year%4==0)&&(year%100!=0)||(year%400==0)) {
-            System.out.println("Рік високосний.");
             return true;
         }
         else {
-            System.out.println("Рік не високосний.");
             return false;
         }
     }
