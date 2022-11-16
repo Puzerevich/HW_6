@@ -31,8 +31,8 @@ public class HomeWorkApp {
 
         // Task №7
         System.out.println("\nTask №7 result:");
-        PlusOrMinus(-11);
-        if(PlusOrMinus(-11))
+        plusOrMinus(-11);
+        if(plusOrMinus(-11))
            System.out.println("Число додатнє");
         else
            System.out.println("Число від'ємне");
@@ -45,7 +45,7 @@ public class HomeWorkApp {
 
         // Task №9
         System.out.println("\nTask №9 result:");
-        TypesString("Text line", 5);
+        System.out.println(typesString("Text line", 5));
 
         // Task №10
         System.out.println("\nTask №10 result:");
@@ -85,12 +85,12 @@ public class HomeWorkApp {
     public static String printColor(int value){
         String res="";
         if(value<0)
-            res = String.valueOf(trafficLight.RED);
+            res = String.valueOf(TrafficLight.RED);
         else
             if(value>100)
-                res = String.valueOf(trafficLight.GREEN);
+                res = String.valueOf(TrafficLight.GREEN);
             else
-                res = String.valueOf(trafficLight.YELLOW);
+                res = String.valueOf(TrafficLight.YELLOW);
         return res;
     }
 
@@ -99,9 +99,9 @@ public class HomeWorkApp {
         int a=3;
         int b=2;
         if(a>=b)
-            return comparNumb.a.res;
+            return ComparNumb.a.res;
         else
-            return comparNumb.b.res;
+            return ComparNumb.b.res;
     }
 
     // Task №6
@@ -115,32 +115,28 @@ public class HomeWorkApp {
     }
 
     // Task №7
-    public static boolean PlusOrMinus(int n){
-        if(n>=0)
-            return true;
-        else
-            return false;
+    public static boolean plusOrMinus(int n){
+        // Ternary operator
+        return n>=0?true:false;
     }
 
     // Task №8
     public static boolean isMinusNumber(int mn){
-            return !(mn>=0);
+            return (mn<0);
     }
 
     // Task №9
-    public static void TypesString(String s, int count){
+    public static String typesString(String s, int count){
+        String res ="";
         while(count>0){
-            System.out.println(s);
+            res = res+s+"\n";
             count--;
         }
+        return res;
     }
 
     public static boolean leapYear(int year){
-        if((year%4==0)&&(year%100!=0)||(year%400==0)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        // Ternary operator
+        return (year%4==0 && year%100!=100)|| year%400==0 ? true : false;
     }
 }
